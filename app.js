@@ -57,19 +57,27 @@ function sortearAmigo() {
         alert("No hay nombres que sotear");
         return;
     }
-   
-    amigos.sort(() => Math.random() - 0.5);
 
+   
+   // amigos.sort(() => Math.random() - 0.5);
+    //Reiniciar se ya se solteron todos.
    if (nombresSorteados.length === amigos.length) {
         alert("Todos los nombres han sido sorteados. Se reiniciará el sorteo.");
         nombresSorteados = []; 
    }
 
+   let amigoActual = nombresSorteados.length; //posición del próximo sorteo
    let amigoSorteado;
+   let intentos = 0;
+
+   //Mezclar y sacar un nombre aleatorio
    do {
         let amigoAleatorio = Math.floor(Math.random() * amigos.length);
         amigoSorteado = amigos[amigoAleatorio];
-   } while (nombresSorteados.includes(amigoSorteado));
+        intentos++;
+
+   //Evitar que se asigne un nombre así mismo y que se repita         
+   } while ((amigoSorteado === amigos[amigoActual] || nombresSorteados.includes(amigoSorteado)) && intentos < 100);
 
    nombresSorteados.push(amigoSorteado);
 
