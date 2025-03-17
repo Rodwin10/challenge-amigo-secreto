@@ -43,6 +43,4 @@ Para ejecutar este proyecto solo necesitas un navegador web moderno.
 ## 👨‍💻 Autor
 Desarrollado por Darwin Rodriguez (https://github.com/Rodwin10)
 
-## 📄 Licencia
-Este proyecto está bajo la licencia MIT - consulta el archivo LICENSE para más detalles.
 
